@@ -114,9 +114,6 @@ npm install
    **Run**. This creates every table, the two storage buckets
    (`land-images` public, `land-documents` private) and all access
    policies.
-   > Already ran `schema.sql` on an older version? Run only the files in
-   > `sql/migrations/` that you haven't run yet, in number order — they
-   > upgrade the schema without wiping your listings.
 3. **Authentication → Providers → Email** → turn **off** "Confirm email".
    (Login is mobile number + password, implemented on top of Supabase's
    email auth with an address nobody ever emails — see
@@ -195,17 +192,10 @@ bhoomisetu/
 ├── index.html
 ├── package.json
 ├── vite.config.js
-├── .env.example              # lists the two variables your .env needs
 ├── docs/screenshots/         # images used in this README
 ├── sql/
 │   ├── schema.sql             # full schema, run once for a fresh project
-│   ├── seed.sql               # optional sample listings
-│   └── migrations/            # upgrades for a project that already ran schema.sql
-│       ├── 002_add_phone_auth.sql
-│       ├── 003_add_listing_edit_delete_policies.sql
-│       ├── 004_add_typed_documents_and_dimensions.sql
-│       ├── 005_add_verification_contacts_recovery_codes.sql
-│       └── 006_require_encumbrance_certificate.sql
+│   └── seed.sql               # optional sample listings
 ├── supabase/
 │   └── functions/
 │       └── account-recovery/   # Edge Function: forgot-password via recovery code
@@ -272,6 +262,3 @@ bhoomisetu/
   account if both the password and recovery code are lost.
 - Replacing or deleting a document leaves the old file in storage (the
   app can never read documents back to find its path).
-
-See [`CLAUDE.md`](CLAUDE.md) for the reasoning behind each database and
-security decision.

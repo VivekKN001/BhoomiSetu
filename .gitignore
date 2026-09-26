@@ -3,3 +3,7 @@ dist
 .DS_Store
 .env
 *.log
+
+# Local-only: dev tooling notes and upgrade scripts for the maintainer's existing database
+CLAUDE.md
+sql/migrations/
