@@ -1,0 +1,18 @@
+export const LOCALITIES = [
+  "Gokulam",
+  "Vijayanagar",
+  "Kuvempunagar",
+  "Saraswathipuram",
+  "Jayalakshmipuram",
+  "Hebbal",
+  "Bogadi",
+  "Metagalli",
+  "Srirampura",
+  "Yadavagiri",
+  "Vidyaranyapuram",
+  "Rajivnagar",
+  "Bannimantap",
+  "Hootagalli",
+  "Nazarbad",
+  "T.K. Layout",
+];
