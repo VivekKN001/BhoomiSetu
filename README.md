@@ -126,18 +126,19 @@ npm install
 
 ### 4. Connect the app to your database
 
-Copy the example env file:
+The app connects to **your own** Supabase project — nothing is shared with
+the original one. In your Supabase dashboard go to **Project Settings →
+API** and copy the *Project URL* and the *anon public* key.
 
-```bash
-cp .env.example .env        # Windows PowerShell: Copy-Item .env.example .env
-```
-
-Then in Supabase go to **Project Settings → API** and paste into `.env`:
+Create a file named `.env` in the project's root folder (next to
+`package.json`) with those two values:
 
 ```
 VITE_SUPABASE_URL=https://<your-project-ref>.supabase.co
 VITE_SUPABASE_ANON_KEY=<your anon public key>
 ```
+
+`.env` is git-ignored, so your keys stay on your machine.
 
 ### 5. Start it
 
@@ -194,7 +195,7 @@ bhoomisetu/
 ├── index.html
 ├── package.json
 ├── vite.config.js
-├── .env.example              # copy to .env, fill in real values
+├── .env.example              # lists the two variables your .env needs
 ├── docs/screenshots/         # images used in this README
 ├── sql/
 │   ├── schema.sql             # full schema, run once for a fresh project
